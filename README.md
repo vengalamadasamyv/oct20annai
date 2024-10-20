@@ -1,2 +1,0 @@
-# oct20annai
-pay

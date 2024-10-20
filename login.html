@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annai - Log</title>
+    <link rel="stylesheet" type="text/css" href="./login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div style="text-align: center;">
+        <a href="./productpage.html"><img src="./assets/images/logo/aca.png" width="100px"></a>
+    </div>
+    <h2>ANNAI CREATIVE ARTS</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form>
+			<h1 >ORDER NOW</h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<span>PERSONAL DETAILS</span>
+			<input type="text" placeholder="Name" id="name" required/>
+			<input type="password" placeholder="Phone" id="mail" required/>
+			<small>CLICK TO PAYMENT</small>
+			<button onclick="rent(event)">Next</button>
+		</form>
+	</div>
+	<!-- <div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				 <button class="ghost" id="signUp" onclick="()">Sign Up</button> 
+			</div>
+		</div> 
+	</div>-->
+</div>
+
+<script src="./login.js"></script>
+
+    
+  <script>
+    
+    const form = document.getElementById("contact_form");
+
+    function rent(e) {
+      
+
+        e.preventDefault();
+      const name = document.getElementById("name"),
+        mail = document.getElementById("mail");
+
+      if (name.value == "") {
+        alert("Please Enter a Name...!");
+      } else if (mail.value == "") {
+        alert("Please Enter a Mobile No...!");
+      } else {
+
+
+
+        // "rzp_live_MqOO1HfZDQoptg",
+        // "vL0eMLHMgwaISLcxz9SqKJ6y",
+
+        // rzp_test_4iBHtXAPauuy6C
+        // agiQPnfLPKTdR43A2LwzvvDw
+
+        var options = {
+          key: "rzp_test_OISOOzhRqv9GJ5",
+          key_secret: "JT61fNQSq7iRr5pglqYKnmEk",
+          amount: 1000 * 100,
+          currency: "INR",
+          name: "Annai Creative Arts",
+          description: "Payment Page",
+          handler: function (response) {
+            // alert(response.razorpay_payment_id);
+            console.log(response);
+            if (response.razorpay_payment_id) {
+              alert("Order Successfully Placed !!!");
+              window.location.href = "https://annaicreativearts.com";
+            }
+          },
+          prefill: {
+            name: "Annai Creative Arts",
+            email: "annaicreativearts@gmail.com",
+            contact: "7485967485",
+          },
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        window.Razorpay(options).open();
+    }
+      
+    }
+
+    
+
+    var razorpayScript = document.createElement("script");
+    razorpayScript.src = "https://checkout.razorpay.com/v1/checkout.js";
+    razorpayScript.onload = function () {
+      console.log("Razorpay script loaded.");
+    };
+    document.head.appendChild(razorpayScript);
+
+
+
+
+    // popup
+
+    
+  
+  </script>
+</body>
+</html>

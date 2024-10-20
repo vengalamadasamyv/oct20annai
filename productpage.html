@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" href="./assets/images/logo/aca.png">
+  <link rel="stylesheet" href="./css/product page css.css">
+  <script src="./js/script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Annai Product | Cart</title>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+  <nav>
+    <img src="./images/icon-menu.svg" class="hamburger" id="hamburger">
+    <div class="logo">
+      <img src="./assets/images/logo/aca.png" alt="sneakers logo" width="70px">
+    </div>
+    <div class="navItems" id="navItems">
+      <img src="./images/icon-close.svg" class="closeIcon" id="closeIcon">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Privacy & Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="user">
+      <div class="cartDiv empty" id="cartDiv">
+        <img src="./images/icon-cart.svg" class="icon" id="cartIcon">
+      </div>
+      <div class="userImg">
+        <img src="./images/image-avatar.png" alt="">
+      </div>
+    </div>
+    <div class="cart-box hide" id="cart-box">
+      <div class="heading">
+        <span>Cart</span>
+      </div>
+      <div class="products" id="products">
+      </div>
+      <div class="checkout" id="checkout">
+        <button><a href="./login.html" style="color: black;">Checkout</a></button>
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <img src="./images/Pro-Photo-Frame-1.png" id="emphasisPicture">
+        <div class="smallImg">
+          <div class="col-4">
+            <img src="./images/Pro-Photo-Frame-1.png" class="smallpictures active" alt="">
+          </div>
+          <div class="col-4">
+            <img src="./images/Pro-Photo-Frame-2.png" class="smallpictures" alt="">
+          </div>
+          <div class="col-4">
+            <img src="./images/Pro-Photo-Frame-3.png" class="smallpictures" alt="">
+          </div>
+          <div class="col-4">
+            <img src="./images/Pro-Photo-Frame-4.png" class="smallpictures" alt="">
+          </div>
+        </div>
+        <div class="carousel mobile" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev"> <img
+              src="./images/icon-previous.svg"></button>
+          <button class="carousel-button next" data-carousel-button="next"> <img src="./images/icon-next.svg"></button>
+          <ul data-slides>
+            <li class="slide" data-active><img src="./images/Pro-Photo-Frame-1.png"> </li>
+            <li class="slide"><img src="./images/Pro-Photo-Frame-2.png"></li>
+            <li class="slide"><img src="./images/Pro-Photo-Frame-3.png"></li>
+            <li class="slide"><img src="./images/Pro-Photo-Frame-4.png"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="starts col-2">
+        <small>Home / Wedding Photo Frame</small>
+        <small class="companyName">
+          Photo Frame
+        </small>
+        <p class="pro-name">
+          Wedding Photo Frame
+        </p>
+        <div class="specify">
+          <p><img src="./assets/images/icons/ico/delivery.png">&nbsp;&nbsp;Delivery in 5-7 working days</p>
+          <p><img src="./assets/images/icons/ico/gallery.png">&nbsp;&nbsp;Photo-realistic print quality</p>
+          <p><img src="./assets/images/icons/ico/gift.png">&nbsp;&nbsp;Ideal for home, office and gifting</p>
+
+        </div>
+        <div class="price">
+          <span class="productValue" id="dc">₹1000/-</span>
+          <span class="percentage"> 50%</span>
+        </div>
+        <span class="totalValue" id="og"> ₹2000/-</span>
+        <span><img src="./assets/images/icons/ico/star.png"><img src="./assets/images/icons/ico/star.png"><img src="./assets/images/icons/ico/star.png"><img src="./assets/images/icons/ico/star.png"><img src="./assets/images/icons/ico/star.png"> (4.8 / 5.00) 129 Rating</span>
+
+        <div class="size">
+          <label for="cars">Choose a size:</label>
+  <select name="cars" id="cars" onchange="chan()">
+    <option value="8 X 8">8 X 8</option>
+    <option value="10 X 12">10 X 12</option>
+    <option value="12 X 15">12 X 15</option>
+    <option value="10 X 15">10 X 15</option>
+  </select>
+        </div>
+
+
+        <div class="buttonsRow">
+          <div class="increment">
+
+            <img src="./images/icon-minus.svg" id="minus">
+
+            <input type="number" name="totalItems" id="totalItems" value="1">
+
+            <img src="./images/icon-plus.svg" id="plus">
+
+          </div>
+          <div class="callToAction">
+            <button id="btn"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper hide" id="wrapper">
+    <div class="carouselContainer">
+      <div class="carouselrow">
+        <img src="./images/icon-close.svg" alt="close" id="carouselClose">
+      </div>
+      <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev"> <img
+            src="./images/icon-previous.svg"></button>
+        <button class="carousel-button next" data-carousel-button="next"> <img src="./images/icon-next.svg"></button>
+        <ul data-slides>
+          <li class="slide" data-active><img src="./images/image-product-1.jpg"> </li>
+          <li class="slide"><img src="./images/image-product-2.jpg"></li>
+          <li class="slide"><img src="./images/image-product-3.jpg"></li>
+          <li class="slide"><img src="./images/image-product-4.jpg"></li>
+        </ul>
+      </div>
+      <div class="smallpitures">
+        <div class="col-carousel">
+          <img src="./images/image-product-1-thumbnail.jpg" class="smallCarouselPicture active">
+        </div>
+        <div class="col-carousel">
+          <img src="./images/image-product-2-thumbnail.jpg" class="smallCarouselPicture">
+        </div>
+        <div class="col-carousel">
+          <img src="./images/image-product-3-thumbnail.jpg" class="smallCarouselPicture">
+        </div>
+        <div class="col-carousel">
+          <img src="./images/image-product-4-thumbnail.jpg" class="smallCarouselPicture">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pro-des">
+    <p class="pro-des-head">Description</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A autem esse dolore facere iusto inventore maiores magnam obcaecati accusantium nulla corrupti expedita suscipit, sint perferendis laudantium deleniti sapiente quia distinctio!</p>
+  </div>
+  <hr class="hline">
+
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <h1>Other Products</h1>
+          <p class="lead" style="text-align: center;"><a href="#">Contact <i class="fas fa-angle-right"></i></a>
+          </p>
+        </div>
+      </div>
+  
+      <div class="row text-center justify-content-center mt-5 SEN">
+        <div class="col-10 col-sm-3">
+          <img alt="image" class="img-fluid rounded sim-pro" src="./assets/images/gift/lamb.png">
+          <h3><strong>MOON LAMB</strong></h3>
+        </div>
+        <div class="col-10 col-sm-3 pt-5 pt-sm-0">
+          <img alt="image" class="img-fluid rounded sim-pro" src="./assets/images/gift/resin.jpg">
+          <h3><strong>RESIN ART</strong></h3>
+        </div>
+  
+        <div class="col-10 col-sm-3 pt-5 pt-sm-0">
+          <img alt="image" class="img-fluid rounded sim-pro" src="./assets/images/gift/Photo Pillows.jpg">
+          <h3><strong>PILLOWS</strong></h3>
+        </div>
+  
+        <div class="col-10 col-sm-3 pt-5 pt-sm-0">
+          <img alt="image" class="img-fluid rounded sim-pro" src="./assets/images/gift/caricature.jpg">
+          <h3><strong>CARICATURE</strong></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+    var ogprice = document.getElementById("og");
+    var dcprice = document.getElementById("dc");
+    var sel = document.getElementById("cars");
+    var a = "₹2000/-";
+    var b = "₹1000/-";
+    var c = "₹2100/-";
+    var d = "₹1050/-";
+    var e = "₹2600/-";
+    var f = "₹1300/-";
+      
+    function chan(){
+      if(sel.value == "8 X 8"){
+        ogprice.innerHTML = a;
+        dcprice.innerHTML = b;
+      }else if(sel.value == "10 X 12"){
+        ogprice.innerHTML = c;
+        dcprice.innerHTML = d;
+      }else if(sel.value == "12 X 15"){
+        ogprice.innerHTML = e;
+        dcprice.innerHTML = f;
+      }else if(sel.value == "10 X 15"){
+        ogprice.innerHTML = "₹3000";
+        dcprice.innerHTML = "₹1500";
+      }else{
+        ogprice.innerHTML = "Select Size";
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
